@@ -1,0 +1,424 @@
+\section{The functional equation of $\theta(z, \tau)$}
+
+ここでは$\theta$関数の$\tau$を動かすことにより$\tau$の間の関係式を作る.
+基本的な方針としては
+\begin{itemize}
+    \item $\Psi(y, \tau)$という関数を$\theta$に適当にかけて作り,これが$\theta(y, \frac{a \tau + b}{c \tau + d})$の定数倍(実際には$\tau$の関数)になっていることを示す.
+    \item 上の$\tau$の関数$\phi(\tau)$を丁寧に計算して求める.
+\end{itemize}
+の２つである.
+\begin{equation*}
+\begin{pmatrix}
+a & b \\
+c & d \\
+\end{pmatrix} \in \mathrm{SL}_2(\mathbb{Z})
+\end{equation*}
+ab, cd are even and $c \ge 0$とする
+
+\begin{equation*}
+\Psi(y, \tau) = \exp(\pi i c (c \tau + d)y^2) \theta((c\tau + d)y, \tau)
+\end{equation*}
+とすると,$\Psi(y + 1, \tau) = \Psi(y, \tau)$となる.
+それは
+$\frac{\Psi(y+1, \tau)}{\Psi(y, \tau)} = 1$を示せばよく,
+\begin{align*}
+\theta((c\tau +d)(y+1), \tau) / \theta((c \tau + d)y, \tau)
+= \exp(\pi i c (c \tau + d)y^2) /\exp(\pi i c ( c \tau + d ) (y+1)^2) = \exp(- \pi i c (c \tau + d)(2y + 1))
+\end{align*}
+を示せば良い。
+また,
+\begin{align*}
+\theta((c \tau + d)(y+1), \tau) & = \sum \exp(\pi in^2 \tau + 2\pi in (c \tau +d) y + 2\pi in (c \tau +d)) & \exp(2\pi ind) = 1 \\
+& = \sum \exp(\pi i (n + c)^2 \tau- c^2 \pi i \tau + 2\pi in (c \tau +d) y )  & \mbox{ただの展開} \\
+& = \sum \exp(\pi i (n )^2 \tau- c^2 \pi i \tau + 2\pi i(n-c) (c \tau +d) y )  & n\mbox{の置換} \\
+& = \sum \exp(\pi i (n )^2 \tau +2\pi in (c \tau +d) y  - c^2 \pi i \tau - 2\pi iy (c \tau +d) (c) )  \\
+& = \theta( (c \tau + d)y, \tau) \exp( - c^2 \pi i \tau - 2\pi iy (c \tau +d) (c) )  \\
+& = \theta( (c \tau + d)y, \tau) \exp( -  \pi i  c ( c\tau  + d) - 2\pi iy (c \tau +d) (c) )  & \exp(-\pi icd) = 1
+\end{align*}
+より、確認できる.
+
+また、$\tau$を含めた関係式として以下を示す。
+\begin{equation*}
+ \Psi(y+ \frac{a \tau + b}{c \tau + d}, \tau)  = \exp(-\pi i \frac{a \tau + b}{c \tau + d} - 2\pi iy)\Psi(y, \tau)
+\end{equation*}
+
+これは,
+\begin{align*}
+ \Psi \left(y + \frac{a \tau +b}{c \tau + d}, \tau \right)  & = \exp \left(\pi i c ( c \tau + d) \left(y + \frac{a \tau +b}{c \tau + d}\right)^2 \right)  \theta( (c \tau + d)y + a \tau + b, \tau) \\
+ & = \exp \left( \pi i c ( c \tau + d) y^2  + 2\pi i cy (a \tau + b ) + \pi ic \frac{(a \tau + b)^2}{ c \tau + d} \right)\theta( (c \tau + d)y + a \tau + b, \tau)
+\end{align*}
+となる.
+また,$\theta(z + a\tau + b, \tau) = \exp(-\pi i a^2 \tau - 2 \pi i az)\theta(z,\tau)$なことに注意すると,
+\begin{align*}
+\frac{\theta( (c \tau + d)y  + a \tau + b, \tau)}{\Psi(y, \tau)} & =
+\frac{\exp(-\pi i a^2 \tau - 2 \pi i a (c \tau + d)y)\theta( (c \tau + d)y,\tau)}{\exp(\pi i c (c \tau + d)y^2) \theta((c\tau + d)y, \tau)} \\
+ & = \exp( - \pi i a^2 \tau - 2 \pi i a (c \tau + d)y  - \pi i c (c \tau + d)y^2)
+\end{align*}
+となる。これを上の式と合わせることで
+
+\begin{align*}
+\frac{\Psi \left(y + \frac{a \tau +b}{c \tau + d}, \tau \right)}{\Psi(y, \tau)} &= \exp(  \pi i c ( c \tau + d) y^2  + 2\pi i cy (a \tau + b ) + \pi ic \frac{(a \tau + b)^2}{c \tau + d} + (- \pi i a^2 \tau - 2 \pi i a (c \tau + d)y  - \pi i c (c \tau + d)y^2)) \\
+  & =  \exp( -2\pi i y(ad -bc) + \pi ic \frac{(a \tau + b)^2}{c \tau + d}  - \pi i a^2 \tau ) \\
+  & = \exp(-2 \pi i y -  \frac{\pi i }{c \tau + d}(a^2 \tau (c \tau + d) - c (a\tau + b)^2) \\
+  & = \exp(-2\pi i y -  \frac{\pi i }{c \tau + d} (a^2 \tau d - 2abc \tau  - b^2c))
+\end{align*}
+となる.
+
+\begin{align*}
+a^2 \tau d - 2abc \tau  - b^2c & =  a(ad -bc)\tau -ab(c \tau  +d) + b(ad -bc) \\
+                               & =  a\tau + b - ab( c\tau + d)
+\end{align*}
+$ab$が偶数なので,$\exp(-2\pi i) =1$に注意すると,
+\begin{equation*}
+ \exp(-2\pi i y -  \frac{\pi i }{c \tau + d} (a^2 \tau d - 2abc \tau  - b^2c)) = \exp(-2\pi iy  -\pi i \frac{a \tau + b}{c \tau + d})
+\end{equation*}
+となる
+
+
+以前の章で求めた$\theta$関数の一意性から$f(z + \tau)=\exp(az + b)f(z), f(z+1) = f(z)$と表される正則関数関数は
+$f(z) = \alpha \theta(z, \tau)$となる.
+$\tau' := \frac{a \tau + b}{c \tau + d}$とすると,
+この条件から$\Psi(y, \tau') = \phi(\tau) \theta(z, \tau')$
+と表される.
+
+$\sum \exp(\pi i n^2 \tau + 2\pi in z)$よりフーリエ係数を見ることで$\theta(z, \tau)$の0次成分は1となる.
+よって,
+\begin{equation*}
+\int_0^1 \theta(y, \tau) dy = 1
+\end{equation*}
+となる.
+よって,$\Psi(y, \tau') = \phi(\tau) \theta(y, \tau')$を積分すると,
+\begin{equation*}
+    \int_0^1 \phi(\tau) \theta(y, \tau') dy = \phi(\tau) = \int_0^1 \Psi(y, \tau')dy = \int_0^1 \exp(\pi ic (c \tau +d)y^2) \theta((c \tau +d)y, \tau)dy
+\end{equation*}
+$c =0$の時,
+
+\begin{align*}
+\int_0^1 \exp(\pi ic (c \tau +d)y^2) \theta((c \tau +d)y, \tau)dy
+& =  \int_0^1 \theta(dy, \tau)dy \\
+& =  \int_0^{d} \theta(z, \tau)dz 1/d  & z = dy \mbox{で置換}\\
+& =  \int_0^{1} \theta(z, \tau)dz d  & z = dy d = \pm 1 \mbox{で}, \theta(-z, \tau) = \theta(z, \tau)より\\
+& = d
+\end{align*}
+となる. $c > 0$を考える.
+\begin{align*}
+\phi(\tau)
+& = \int_0^1 \exp(\pi i c  (c\tau + d)y^2)(\sum \exp(\pi i n^2 \tau  + 2\pi in y(c \tau + d))) \\
+& = \int_0^1 \sum \exp(\pi i (\tau + \frac{d}{c}) (c^2y^2 + 2cny  + n^2)) - \pi i((\tau + \frac{d}{c})n^2 +  n^2 \tau)) \\
+& = \sum \exp(-\pi i n^2 \frac{d}{c}) \int_0^1\exp(\pi i (\tau + \frac{d}{c})(cy + n)^2) dy
+\end{align*}
+となる.
+$cd$がevenなことに注意すると等式の右辺最初の項は
+\begin{equation*}
+\exp(- \pi i d (n+c)^2 / c) = \exp(-\pi i n^2 \frac{d}{c} - 2\pi ind - \pi i cd) = \exp(-\pi i n^2 \frac{d}{c})
+\end{equation*}
+となる.これと
+\begin{equation*}
+\int_0^1 \exp(\pi (cy + c + n)^2 (\tau  + \frac{d}{c})) dy
+= \int_1^2 \exp(\pi (cy  + n)^2 (\tau  + \frac{d}{c})) dy
+\end{equation*}
+より,
+\begin{equation*}
+ \phi(\tau)  = \sum_{1\le n \le c} \exp(-\pi i n^2 d/c)\int_{- \infty}^{\infty}\exp(\pi i c^2y^2)(\tau + \frac{d}{c})dy
+\end{equation*}
+となる.
+この積分を積分が簡単に計算できる所で評価し、その後解析接続で広げる.
+
+$\tau = it - \frac{d}{c}$とする.この時,
+\begin{align*}
+\int_{- \infty}^{\infty}\exp(\pi i c^2y^2)(\tau + \frac{d}{c})dy
+& = \int_{- \infty}^{\infty}\exp(- \pi c^2 y^2 t)dy \\
+& = \int_{- \infty}^{\infty}\frac{1}{c t^{1/2}}\exp(- \pi u^2)du & u = c t^{1/2}y \mbox{に置換} \\
+& = \frac{1}{c t^{1/2}}
+\end{align*}
+となる.これは$t > 0$の全てで成り立つので,$t= (\tau + \frac{d}{c}) / i$から
+\begin{equation*}
+\int_{- \infty}^{\infty}\exp(\pi i c^2y^2)(\tau + \frac{d}{c})dy = \frac{1}{ c \left( (\tau + d/c) / i\right)^{1/2}}
+\end{equation*}
+(ただし1/2乗は実部が正の方を取る.)
+
+\begin{equation*}
+ S_{d,c}: = \sum_{1\le n \le c} \exp(-\pi i n^2 d/c)
+\end{equation*}
+がわかればよい.これはいわゆるガウス和である.
+実際ガウス和は$c^{1/2} \zeta$($\zeta$は1の8乗根)となる.ここでは
+その全ては証明しないが,$d=2, c$が奇素数$p$の時だけ示す.
+その前にJacobi Symbolについて定義しておく.
+
+Jacobi記号は
+\begin{equation*}
+\left(\frac{a}{p}\right)=\left\{\begin{aligned} 0 & \text { if } a \equiv 0(\bmod p) \\ 1 & \text { if } a \neq 0(\bmod p) \text { and for some integer } x: a \equiv x^{2}(\bmod p) \\-1 & \text { if } a \neq 0(\bmod p) \text { and there is no such } x \end{aligned}\right.
+\end{equation*}
+で分母が素数の場合を定義し
+$n=p_{1}^{\alpha_{1}} p_{2}^{\alpha_{2}} \cdots p_{k}^{\alpha_{k}}$の時,
+\begin{equation*}
+\left(\frac{a}{n}\right)=\left(\frac{a}{p_{1}}\right)^{\alpha_{1}}\left(\frac{a}{p_{2}}\right)^{\alpha_{2}} \cdots\left(\frac{a}{p_{k}}\right)^{\alpha_{k}}
+\end{equation*}
+で定めたものである.
+分母が1の場合は必ず1とする
+
+Jacobi記号に関する定理として以下は使う
+\begin{lem}
+\begin{itemize}
+    \item $\left( \frac{a}{n} \right) \left( \frac{b}{n}\right) = \left(  \frac{ab}{n}\right)$
+    \item $m,n$が互いに素な奇数とするこの時
+    \begin{equation*}
+       \left(\frac{m}{n}\right)\left(\frac{n}{m}\right)=(-1)^{\frac{m-1}{2} \cdot \frac{n-1}{2}}
+    \end{equation*}
+    \item 
+    \begin{equation*}
+    \left(\frac{a}{n}\right)=\left(\frac{a \pm m \cdot n}{n}\right)
+    \end{equation*}
+    \item 
+    \begin{equation*}
+    \left(\frac{2}{n}\right)=(-1)^{\frac{n^{2} - 1}{8}}
+    \end{equation*}
+\end{itemize}
+\end{lem}
+
+実際にガウス和を計算する.$1 \le n, m \le p$に対し,
+$n^2 - m^2 = (n-m)(n+m)$が$p$で割り切れるのは$n+m$が$p$で割り切れる時である.
+この時$(p-k)^2 \equiv k^2 \quad \mathrm{mod} p$となり,
+$\exp(2 \pi i k^2/p) = \exp(2 \pi i (p-k)^2/p)$となる.
+それ以外の組み合わせでは一致しないので,
+$\sum \exp( 2\pi i k^2/ p)$は
+$0$を除き$n \equiv x^2$ mod $p$となる$n$がちょうど2回ずつ現れる.
+以下では$ \exp( 2\pi i / p) = \zeta_p$と表す.
+\begin{equation*}
+\sum_{n=0}^{p-1}  \zeta_p^n = (1 - \zeta_p^p) / (1 -\zeta_p) = 0
+\end{equation*}
+となることに注意し、
+$n=0$も含め,$n \equiv x^2$ mod $p$となる$n$全てを走る和は
+$n \equiv x^2$ mod $p$とかけない$n$全てを走る和の-1倍に一致する.
+よって,
+\begin{equation*}
+\sum_{n=0}^{p-1} \exp(2\pi i n^2/p) = \sum_{n =1}^{p-1}  \left(\frac{n}{p}\right)\exp(2 \pi i n/p)
+\end{equation*}
+となる.
+
+後は
+\begin{equation*}
+\tau_{p}=\sum_{a=1}^{p-1}\left(\frac{a}{p}\right) \zeta_{p}^{a}
+\end{equation*}
+とした時,
+$\tau_{p}^{2}=(-1)^{\frac{p-1}{2}} p$となることを示す.
+\begin{align*}
+\tau_{p}^2=\sum_{a=1}^{p-1} \sum_{b=1}^{p-1}\left(\frac{ab}{p}\right) \zeta_{p}^{a+b}
+\end{align*}
+となり,$b = at \equiv \mathrm{mod} p$となる
+$t$の代表元として$1, \ldots, p-1$までが取れるので
+$\left( \frac{a^2}{p} \right) =1$に注意すると
+\begin{equation*}
+\tau_{p}^{2}=\sum_{a=1}^{p-1} \sum_{t=1}^{p-1}\left(\frac{a^{2} t}{p}\right) \zeta_{p}^{a+a t}=\sum_{t=1}^{p-1}\left(\frac{t}{p}\right)
+\sum_{a=1}^{p-1} \zeta_{p}^{a(t+1)}
+\end{equation*}
+となる.
+$t+ 1 =p$以外では
+$\sum_{a=1}^{p-1} \zeta_{p}^{a(t+1)} = -1$となり,$t+1=p$の時は$p-1$となるので,
+\begin{equation}
+\tau_{p}^{2}=-\sum_{t=1}^{p-1}\left(\frac{t}{p}\right)+\left(\frac{p-1}{p}\right) p=\left(\frac{-1}{p}\right) p
+\end{equation}
+となる.
+ただし$\sum_{t=1}^{p-1}\left(\frac{t}{p}\right)  = 0$に注意.
+これは$a$を$p$を法として平方剰余を持たない$a$を使い,
+
+\begin{equation*}
+\sum_{t=1}^{p-1}\left(\frac{t}{p}\right) = 
+\left( \frac{a}{p}\right)
+\sum_{t=1}^{p-1}\left(\frac{t}{p}\right)
+\end{equation*}
+となるので,0とわかる.
+
+
+これで
+\begin{equation*}
+\Psi(y, \tau) = \exp(\pi i c (c\tau + d ) y^2) \theta( (c \tau + d)y, \tau) = \zeta c^{1/2} \frac{1}{ c ((\tau + \frac{d}{c} )/ i)^{1/2}} \theta(y, \frac{a \tau + b}{ c \tau + d})
+\end{equation*}
+これをもとに$y = \frac{z}{c \tau + d}$を代入した結果以下が得られる.
+\begin{equation*}
+\theta( \frac{z}{c \tau + d}, \frac{a \tau + b}{c \tau + d}) = \zeta^{-1}  ((c \tau + d)/i)^{1/2} \exp(\pi i c z^2/ (c \tau + d)) \theta(z, \tau)
+\end{equation*}
+
+ここから1のべき乗根をまとめてその値を求める.
+\begin{thm}
+$a,b,c,d \in \mathbb{Z}$で$ad -bc=1,ab, cd:even$とする.
+この時,
+\begin{align*}
+ \theta(\frac{z}{c\tau + d}, \frac{a \tau + b}{c \tau +d}) =  \zeta
+ \left(c\tau + d \right)^{1/2}
+ \exp(\pi i c z^2/(c\tau + d))  \theta(z, \tau)
+ \tag{F1}
+\end{align*}
+となる
+今$c > 0$ または$c=0$ and $d>0$とする.
+この時
+\begin{enumerate}
+    \item $c$がeven,$d$がoddなら,
+    \begin{equation*}
+     \zeta = i^{\frac{1}{2}(d-1)}  \left(\frac{c}{|d|} \right)
+    \end{equation*}
+    ただし($\frac{x}{y}$)はJacobi Symbol
+\item もし$c$がodd, $d$がevenの時,
+\begin{equation*}
+ \zeta = \exp(-\pi i c /4)  \left(\frac{d}{c} \right)
+\end{equation*}
+\end{enumerate}
+
+\end{thm}
+\begin{proof}
+inductionで示す.
+最初は$
+\begin{pmatrix}
+a & b \\ c & d
+\end{pmatrix}
+= \begin{pmatrix}
+1 & b \\ 0 & 1
+\end{pmatrix}
+,b$はevenの場合を考える.
+この時,
+\begin{align*}
+\theta(z, \tau + b)
+& = \sum \exp(\pi i n^2 (\tau + b) + 2\pi inz) \\
+& = \sum \exp(\pi i n^2 (\tau ) + 2\pi inz)  = \theta(z, \tau)
+\end{align*}
+とり$F1$の右辺も$c =0$に注意すると,
+$\zeta  \theta(z, \tau)$となり,
+今は$\zeta =1 = i^0 1$となるので成り立つ.
+$\begin{pmatrix}
+a & b \\ c & d
+\end{pmatrix}
+= \begin{pmatrix}
+0 & -1 \\ 1 & 0
+\end{pmatrix}
+$の時,
+(F1)から
+\begin{equation*}
+    \theta(z/\tau, -1/\tau) = \zeta t^{1/2} \exp(\pi i z^2/\tau) \theta(z, \tau)
+\end{equation*}
+となる.
+また,
+\begin{equation*}
+ \theta(z, \tau)  = \sum_{1\le n \le c}\exp(-\pi in^2 \frac{d}{c}) \frac{1}{ c ((\tau + \frac{d}{c})/i)^{1/2}} \exp(-\pi i c z^2/ (c \tau + d)) \theta(\frac{z}{c \tau + d}, \frac{a \tau + b}{ c\tau + d})
+\end{equation*}
+となっており,これに今回の条件を代入すると
+\begin{align*}
+\theta(\frac{z}{\tau}, \frac{-1}{\tau})  & = \sum_{1 \le n \le 1} (\tau / i)^{1/2} \exp(\pi i \frac{z^2}{\tau}) \theta(z , \tau) \\
+& = \exp(- \pi i /4) \tau^{1/2} \exp(\pi i z^2 / \tau) \theta(z, \tau)
+\end{align*}
+となる.これから成り立つ.
+この後は|c| + |d|のinductionから成り立つことが言える.
+このinductionは式変形とJacobi Symbolの真面目な計算で求められる.
+
+$|d| > |c|$とする.この時
+$|d-2c|$か $|d + 2c|$いずれかは $|d|$より小さくなる.
+今仮に $|d + 2c| < |d|$とする.この時$|d+2c| + |c|$についてはinductionの仮定を満たすとして、そこに帰着させる形で証明する.
+
+$F1$に$\tau$として$\tau + 2$を取り,
+$
+\begin{pmatrix}
+a & b  \\ c  & d 
+\end{pmatrix}
+\in \mathrm{SL}(2, \mathbb{Z})
+$
+の場合の等式を見ると
+\begin{equation*}
+\theta(\frac{z}{c \tau + 2c + d}, \frac{a\tau + 2a + b}{c 
+\tau  + 2c + d}) = \zeta (c \tau +2c + d)^{1/2}\exp(\frac{\pi i c z^2}{c \tau + 2c + d})\theta(z, \tau + 2)
+\end{equation*}
+となる.
+
+$
+\begin{pmatrix}
+a & b + 2a \\ c  & d + 2c 
+\end{pmatrix}
+\in \mathrm{SL}(2, \mathbb{Z})
+$の場合はの$F1$は
+\begin{equation*}
+\theta(\frac{z}{c \tau + 2c + d}, \frac{a\tau + 2a + b}{c 
+\tau  + 2c + d}) = \zeta (c \tau +2c + d)^{1/2}\exp(\frac{\pi i c z^2}{c \tau + 2c + d})\theta(z, \tau )
+\end{equation*}
+となる.
+$\theta(z, \tau) = \theta(z, \tau + 2)$
+となることから,
+後者の$\zeta$を$\zeta'$と表すと
+$\zeta = \zeta'$となるので,$\zeta'$が$\zeta$の条件を満たす
+つまり
+\begin{itemize}
+    \item  $c$がoddで$d$がevenの時$\exp(- \pi i c /4) \left(\frac{d + 2c}{c}\right) = \exp(- \pi i c /4) \left(\frac{d}{c} \right)$
+    \item $c$がevenで$d$がoddの時に
+\begin{equation*}
+  i^{\frac{1}{2}(d -1) }\left(\frac{c}{|d|} \right) = i^{\frac{1}{2}(d + 2c -1) }\left(\frac{c}{|d + 2c|}\right) 
+\end{equation*}
+\end{itemize}
+を示せば良い.
+
+c がodd, dがevenの場合
+Jacobi Symbolの演算から
+$(\frac{d + 2c}{c}) = (\frac{d}{c})$となるので一致する.
+cがeven, dがoddの場合に示す.
+これを示すために一つ一つ計算していく.
+$c = 2^kc'$($c'$はodd)とする.
+
+\begin{align*}
+\left(\frac{c}{|d|} \right) 
+& = \left(\frac{2}{|d|} \right)^k \left(\frac{c'}{|d|}\right) \\
+& = (-1)^{\frac{|d|^2 -1}{8}k}\left(\frac{c'}{|d|}\right)
+\end{align*}
+また,
+\begin{equation*}
+\left( \frac{c'}{|d|} \right) \left( \frac{|d|}{c'} \right)
+= (-1)^{\frac{|d|-1}{2} \frac{c'-1}{2}}
+\end{equation*}
+となる.
+同様に
+\begin{align*}
+\left(\frac{c}{|d + 2c|} \right) 
+& = \left(\frac{2}{|d + 2c|} \right)^k \left(\frac{c'}{|d + 2c|}\right) \\
+& = (-1)^{\frac{|d + 2c|^2 -1}{8}k}\left(\frac{c'}{|d+2c|}\right)
+\end{align*}
+\begin{equation*}
+\left( \frac{c'}{|d + 2c|} \right) \left( \frac{|d + 2c|}{c'} \right)
+= (-1)^{\frac{|d + 2c|-1}{2} \frac{c'-1}{2}}
+= (-1)^{\frac{|d |-1}{2} \frac{c'-1}{2}}
+\end{equation*}
+となる.($c$はevenなので)
+\begin{equation*}
+    \left(\frac{|d + 2c| }{c'} \right) = \left( \frac{|d|}{c'}\right)
+\end{equation*}
+より,
+\begin{equation*}
+\left( \frac{c'}{|d + 2c|}\right) =  \left( \frac{c'}{|d|} \right)
+\end{equation*}
+となる.
+よって
+\begin{align*}
+\left( \frac{c}{|d + 2c|} \right) 
+& = (-1)^{\frac{|d + 2c|^2 -1}{8}k}\left( \frac{c'}{|d + 2c|}\right)  \\
+& = (-1)^{\frac{|d + 2c|^2 -1}{8}k} \left( \frac{c'}{|d|} \right) \\
+& = (-1)^{(\frac{|d + 2c|^2 -1}{8} - \frac{|d|^2}{8}) k} \left( \frac{c}{|d|} \right) \\
+\end{align*}
+となる.
+\begin{equation*}
+(-1)^{(\frac{|d + 2c|^2 }{8} - \frac{|d|^2}{8}) k} = (-1)^{\frac{4cd + 4c^2}{8}k}
+\end{equation*}
+となり,これは$k=1$の時-1となり$k >1$の時1となる.
+これは$(-1)^{c/2}$と一致する.
+$|d-2c| < |d|$の場合も同様.
+
+|c| > |d|の場合は$|d| > |c|$の場合に帰着させる.
+\begin{align*}
+\theta(\frac{z}{t}, \frac{-1}{\tau})  
+& = \exp(- \pi i /4) \tau^{1/2} \exp(\pi i z^2 / \tau) \theta(z, \tau)
+\end{align*}
+であることに注意して
+$\tau$として$- \frac{1}{\tau}$を取り,$w= \tau z$として$F1$を変形させると,
+\begin{align*}
+\theta \left( \frac{w}{-c + d \tau}, \frac{-a + b \tau}{-c + d \tau} \right) 
+& = \zeta  (\frac{-c}{\tau} + d)^{1/2} \exp \left( \pi i c (\tau z)^2/ \tau( -c + d \tau) \right) \theta(\frac{\tau z}{\tau} , \frac{-1}{\tau}) \\
+& = \zeta  (\frac{-c}{\tau} + d)^{1/2} \exp \left( \pi i c (w)^2/ \tau( -c + d \tau) \right) \exp(- \pi i /4) \tau^{1/2} \exp(\pi i w^2 / \tau) \theta(w, \tau) \\
+& = \zeta  \exp(- \pi i /4) (-c + d \tau)^{1/2} \exp( \pi i c (w)^2/ \tau( -c + d \tau ) + \pi i w^2 / \tau) \theta(w, \tau) \\
+& = \zeta  \exp(- \pi i /4) (-c + d \tau)^{1/2} \exp( \pi i d (w)^2/ ( -c + d \tau ) ) \theta(w, \tau)
+\end{align*}
+($ \frac{c}{-c + d \tau} + 1 =  \frac{d\tau}{ -c + d \tau}$より)
+となり$|c| > |d|$の場合の関係式に帰着できる.後は真面目に計算すれば証明される(と思うので省略する).
+\end{proof}
